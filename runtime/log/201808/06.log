@@ -1,0 +1,772 @@
+---------------------------------------------------------------
+[ 2018-08-06T09:13:31+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.265200s][吞吐率：3.77req/s] [内存消耗：981.52kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:13:36+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.265200s][吞吐率：3.77req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:13:47+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：1,835.84kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":西安市}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: select[D:\php\PHPTutorial\WWW\soukebao\application\api\model\Search.php:173]
+---------------------------------------------------------------
+[ 2018-08-06T09:14:01+08:00 ] 192.168.1.186 GET /housetype
+[ info ] www.soukebao.com/housetype [运行时间：0.045002s][吞吐率：22.22req/s] [内存消耗：1,869.33kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'houseType',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\User->houseType[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:15:30+08:00 ] 192.168.1.186 POST /gethouse
+[ info ] www.soukebao.com/gethouse [运行时间：0.043003s][吞吐率：23.25req/s] [内存消耗：1,837.94kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Publish',
+    2 => 'getHouse',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'origin' => 'http://127.0.0.1:34278',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '184',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'area' => '20-50',
+  'address' => '1111',
+  'price' => '222-222',
+  'role' => '0',
+  'user_id' => 9,
+  'type' => 4,
+  'province' => '北京市',
+  'city' => '市辖区',
+  'area1' => '东城区',
+  'name' => '222222222222',
+  'phone' => '222222',
+)
+[ info ] [ RUN ] app\api\controller\Publish->getHouse[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Publish.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `get_house` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] INSERT INTO `get_house` (`area` , `address` , `price` , `role` , `user_id` , `type` , `province` , `city` , `area1` , `name` , `phone` , `district`) VALUES ('20-50' , '1111' , '222-222' , 0 , 9 , 4 , '北京市' , '市辖区' , '东城区' , '222222222222' , '222222' , '北京市市辖区东城区') [ RunTime:0.004000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:15:49+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.159009s][吞吐率：6.29req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:15:51+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D [运行时间：0.026001s][吞吐率：38.46req/s] [内存消耗：1,835.84kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":西安市}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: select[D:\php\PHPTutorial\WWW\soukebao\application\api\model\Search.php:173]
+---------------------------------------------------------------
+[ 2018-08-06T09:16:50+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D [运行时间：0.025001s][吞吐率：40.00req/s] [内存消耗：1,835.84kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":2, "price": "", "district": "","area":"","job":"","city":西安市}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: select[D:\php\PHPTutorial\WWW\soukebao\application\api\model\Search.php:173]
+---------------------------------------------------------------
+[ 2018-08-06T09:17:02+08:00 ] 192.168.1.186 GET //searchindex/%7B%22type%22:4,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D
+[ info ] www.soukebao.com//searchindex/%7B%22type%22:4,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%E8%A5%BF%E5%AE%89%E5%B8%82%7D [运行时间：0.025002s][吞吐率：40.00req/s] [内存消耗：1,835.84kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":4, "price": "", "district": "","area":"","job":"","city":西安市}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: select[D:\php\PHPTutorial\WWW\soukebao\application\api\model\Search.php:173]
+---------------------------------------------------------------
+[ 2018-08-06T09:19:19+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.187201s][吞吐率：5.34req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:19:21+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D [运行时间：0.046800s][吞吐率：21.37req/s] [内存消耗：1,891.12kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":"西安市"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `get_house` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`name`,`a`.`create_time` FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = '西安市' ORDER BY `a`.`id` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:22:41+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：2.301132s][吞吐率：0.43req/s] [内存消耗：1,020.95kb] [文件加载：34]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]file_get_contents(): php_network_getaddresses: getaddrinfo failed: �������������ʱͨ�����ֵ���ʱ�������ζ�ű��ط����û�д�Ȩ���������յ���Ӧ�� [D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php:29]
+---------------------------------------------------------------
+[ 2018-08-06T09:22:41+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22undefined%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22undefined%22%7D [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,889.92kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":"undefined"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `get_house` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`name`,`a`.`create_time` FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = 'undefined' ORDER BY `a`.`id` DESC [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:23:00+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22undefined%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22undefined%22%7D [运行时间：0.044003s][吞吐率：22.73req/s] [内存消耗：1,889.92kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":"undefined"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `get_house` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`name`,`a`.`create_time` FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = 'undefined' ORDER BY `a`.`id` DESC [ RunTime:0.003001s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:23:11+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.202011s][吞吐率：4.95req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:23:15+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:1,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D [运行时间：0.046003s][吞吐率：21.74req/s] [内存消耗：1,891.12kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":1, "price": "", "district": "","area":"","job":"","city":"西安市"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `get_house` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`name`,`a`.`create_time` FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = '西安市' ORDER BY `a`.`id` DESC [ RunTime:0.004000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:24:25+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.179010s][吞吐率：5.59req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:24:29+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：1,894.01kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":2, "price": "", "district": "","area":"","job":"","city":"西安市"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img`,`a`.`create_time`,`a`.`des`,`a`.`identity` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = '西安市' ORDER BY `a`.`id` DESC [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:24:31+08:00 ] 192.168.1.186 GET /sellhousedes/23
+[ info ] www.soukebao.com/sellhousedes/23 [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,876.91kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Des',
+    2 => 'sellHouseDes',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '23',
+)
+[ info ] [ RUN ] app\api\controller\Des->sellHouseDes[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Des.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img`,`a`.`create_time`,`a`.`des`,`a`.`identity` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`id` = '23' LIMIT 1 [ RunTime:0.010001s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:24:59+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.180010s][吞吐率：5.56req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:25:01+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D [运行时间：0.044002s][吞吐率：22.73req/s] [内存消耗：1,894.01kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":2, "price": "", "district": "","area":"","job":"","city":"西安市"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img`,`a`.`create_time`,`a`.`des`,`a`.`identity` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = '西安市' ORDER BY `a`.`id` DESC [ RunTime:0.005000s ]
+---------------------------------------------------------------
+[ 2018-08-06T09:25:16+08:00 ] 192.168.1.186 GET /position/34.22259,108.94878
+[ info ] www.soukebao.com/position/34.22259,108.94878 [运行时间：0.181011s][吞吐率：5.52req/s] [内存消耗：981.53kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'position',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '34.22259,108.94878',
+)
+[ info ] [ RUN ] app\api\controller\Login->position[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-06T09:25:18+08:00 ] 192.168.1.186 GET /searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D
+[ info ] www.soukebao.com/searchindex/%7B%22type%22:2,%20%22price%22:%20%22%22,%20%22district%22:%20%22%22,%22area%22:%22%22,%22job%22:%22%22,%22city%22:%22%E8%A5%BF%E5%AE%89%E5%B8%82%22%7D [运行时间：0.037002s][吞吐率：27.03req/s] [内存消耗：1,894.01kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Search',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'https://servicewechat.com/wx172c401fc856e006/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1807300 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{"type":2, "price": "", "district": "","area":"","job":"","city":"西安市"}',
+)
+[ info ] [ RUN ] app\api\controller\Search->index[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Search.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img`,`a`.`create_time`,`a`.`des`,`a`.`identity` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `a`.`price` LIKE '%%'  AND `a`.`district` LIKE '%%'  AND `a`.`area` LIKE '%%'  AND `status` = 1  AND `city` = '西安市' ORDER BY `a`.`id` DESC [ RunTime:0.003000s ]
