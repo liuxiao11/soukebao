@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50553
-Source Host           : localhost:3306
+Source Server         : 11
+Source Server Version : 50560
+Source Host           : 118.190.210.33:3306
 Source Database       : soukebao
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50560
 File Encoding         : 65001
 
-Date: 2018-08-06 09:48:58
+Date: 2018-08-13 16:36:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,13 +24,14 @@ CREATE TABLE `admin` (
   `admin_name` varchar(255) DEFAULT NULL COMMENT '管理员名称',
   `admin_pwd` varchar(255) DEFAULT NULL COMMENT '管理员密码',
   `last_login_time` datetime DEFAULT NULL COMMENT '最后一次登陆时间',
+  `kf_phone` varchar(45) DEFAULT NULL COMMENT '客服电话',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'zhangsan', '202cb962ac59075b964b07152d234b70', '2018-08-02 18:14:24');
+INSERT INTO `admin` VALUES ('1', 'zhangsan', '202cb962ac59075b964b07152d234b70', '2018-08-13 16:17:28', '029-68882824');
 
 -- ----------------------------
 -- Table structure for area
@@ -3199,17 +3200,19 @@ DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL COMMENT '分类名称',
+  `icon` varchar(255) DEFAULT NULL COMMENT '图标',
+  `color` varchar(255) DEFAULT NULL COMMENT '图标颜色',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '新房');
-INSERT INTO `category` VALUES ('2', '二手房');
-INSERT INTO `category` VALUES ('3', '商铺');
-INSERT INTO `category` VALUES ('4', '写字楼');
-INSERT INTO `category` VALUES ('9', '公寓');
+INSERT INTO `category` VALUES ('1', '新房', 'icon/xf2.png', '#47c133');
+INSERT INTO `category` VALUES ('2', '二手房', 'icon/ershouf2x.png', '#edaa2a');
+INSERT INTO `category` VALUES ('3', '商铺', 'icon/sp2x.png', '#34c9ab');
+INSERT INTO `category` VALUES ('4', '写字楼', 'icon/xzl2x.png', '#e88625');
+INSERT INTO `category` VALUES ('9', '公寓', 'icon/gy2x.png', '#34c9ab');
 
 -- ----------------------------
 -- Table structure for city
@@ -3221,7 +3224,7 @@ CREATE TABLE `city` (
   `name` varchar(20) NOT NULL,
   `provincecode` varchar(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=343 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=345 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of city
@@ -3568,6 +3571,8 @@ INSERT INTO `city` VALUES ('339', '654000', '伊犁哈萨克自治州', '650000'
 INSERT INTO `city` VALUES ('340', '654200', '塔城地区', '650000');
 INSERT INTO `city` VALUES ('341', '654300', '阿勒泰地区', '650000');
 INSERT INTO `city` VALUES ('342', '659000', '省直辖行政单位', '650000');
+INSERT INTO `city` VALUES ('343', '120100', '天津市', '120000');
+INSERT INTO `city` VALUES ('344', '500100', '重庆市', '500000');
 
 -- ----------------------------
 -- Table structure for get_house
@@ -3582,33 +3587,38 @@ CREATE TABLE `get_house` (
   `price` varchar(75) DEFAULT NULL COMMENT '价格区间',
   `phone` varchar(45) DEFAULT NULL COMMENT '联系电话',
   `user_id` int(11) DEFAULT NULL COMMENT '用户id',
-  `type` tinyint(4) DEFAULT NULL COMMENT '求购房源类型  1-新房 2-二手房 2-商铺 3-写字楼',
+  `type` tinyint(4) DEFAULT '1' COMMENT '求购房源类型  1-新房 2-二手房 2-商铺 3-写字楼',
   `status` tinyint(4) DEFAULT '2' COMMENT '消息状态 1审核通过 0未通过 2审核中',
   `province` varchar(255) DEFAULT NULL COMMENT '省',
   `city` varchar(255) DEFAULT NULL COMMENT '市',
   `area1` varchar(255) DEFAULT NULL COMMENT '区县',
   `name` varchar(255) DEFAULT NULL COMMENT '标题',
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `pay_id` varchar(255) DEFAULT '0' COMMENT '1此条信息已支付人的id',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of get_house
 -- ----------------------------
-INSERT INTO `get_house` VALUES ('1', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '3', '2', '1', null, null, null, '我是标题', '2018-08-02 11:53:10');
-INSERT INTO `get_house` VALUES ('2', '陕西省西安市雁塔区', '2', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:21');
-INSERT INTO `get_house` VALUES ('3', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:20');
-INSERT INTO `get_house` VALUES ('4', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:19');
-INSERT INTO `get_house` VALUES ('5', '陕西省西安市雁塔区', '2', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:18');
-INSERT INTO `get_house` VALUES ('6', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:14');
-INSERT INTO `get_house` VALUES ('16', '北京市市辖区东城区', '0', '20-50', '1111', '222-222', '222222', '9', '4', '2', '北京市', '市辖区', '东城区', '222222222222', '2018-08-06 09:15:30');
-INSERT INTO `get_house` VALUES ('8', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '1', null, null, null, '我是标题', '2018-08-01 14:43:12');
-INSERT INTO `get_house` VALUES ('10', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '1', null, null, null, '我是标题', '2018-08-01 14:43:12');
-INSERT INTO `get_house` VALUES ('11', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '111', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:11');
-INSERT INTO `get_house` VALUES ('12', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '1222-8000', '5454', '2', '2', '2', null, null, null, '我是标题', '2018-08-01 14:43:10');
-INSERT INTO `get_house` VALUES ('13', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '1200-5000', '15987456874', '4', '2', '1', '陕西省', '西安市', '雁塔区', '我是标题', '2018-08-05 14:00:01');
-INSERT INTO `get_house` VALUES ('14', '陕西省西安市雁塔区', '1', '12-56', '西安软件新城', '1200-5000', '15987456874', '4', '2', '1', '陕西省', '西安市', '雁塔区', '我是标题', '2018-08-05 14:00:03');
-INSERT INTO `get_house` VALUES ('15', '北京市市辖区东城区', '1', '2222222222-22222222', '2222222', '222222222-2222222222', '2222222222222222', '9', '2', '1', '北京市', '市辖区', '东城区', '22222', '2018-08-02 19:22:16');
+INSERT INTO `get_house` VALUES ('4', '陕西省西安市高陵县', '0', '50-100', '马家湾', '8000-12000', '17612900706', '18', '1', '0', '陕西省', '西安市', '高陵县', '乐华城', '2018-08-13 16:19:27', '0');
+INSERT INTO `get_house` VALUES ('3', '陕西省西安市高陵县', '0', '50-100', '马家湾', '8000-12000', '17612900706', '18', '1', '1', '陕西省', '西安市', '高陵县', '乐华城', '2018-08-13 16:19:32', '0');
+INSERT INTO `get_house` VALUES ('5', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:19:21', '0');
+INSERT INTO `get_house` VALUES ('6', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '0', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:19:14', '0');
+INSERT INTO `get_house` VALUES ('7', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:19:02', '0');
+INSERT INTO `get_house` VALUES ('8', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:58', '0');
+INSERT INTO `get_house` VALUES ('9', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:52', '0');
+INSERT INTO `get_house` VALUES ('10', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:48', '0');
+INSERT INTO `get_house` VALUES ('11', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:44', '0');
+INSERT INTO `get_house` VALUES ('12', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:40', '0');
+INSERT INTO `get_house` VALUES ('13', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:32', '0');
+INSERT INTO `get_house` VALUES ('14', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:28', '0');
+INSERT INTO `get_house` VALUES ('15', '陕西省西安市新城区', '1', '50-100', '只要在西安', '>4500', '18329772962', '30', '3', '1', '陕西省', '西安市', '新城区', '100万以内临街商铺', '2018-08-13 16:18:23', '0');
+INSERT INTO `get_house` VALUES ('16', '陕西省西安市未央区', '0', '50-100', '凤城三路', '8000-12000', '17691349399', '27', '1', '1', '陕西省', '西安市', '未央区', '新房', '2018-08-13 16:24:42', '0,18');
+INSERT INTO `get_house` VALUES ('17', '山西省太原市阳曲县', '1', '50-100', '大河路', '8000-12000', '17691349399', '27', '2', '1', '山西省', '太原市', '阳曲县', '北郊', '2018-08-13 16:18:13', '0');
+INSERT INTO `get_house` VALUES ('18', '内蒙古自治区呼和浩特市新城区', '1', '<50', '上河路', '5000-8000', '17691349399', '27', '3', '1', '内蒙古自治区', '呼和浩特市', '新城区', '日本', '2018-08-13 16:18:07', '0');
+INSERT INTO `get_house` VALUES ('19', '江苏省南京市玄武区', '1', '300-350', '鸭沟村', '30000-35000', '17691349399', '27', '4', '1', '江苏省', '南京市', '玄武区', '伊拉克', '2018-08-13 16:18:02', '0');
+INSERT INTO `get_house` VALUES ('20', '陕西省西安市周至县', '1', '50-100', '大转盘', '5000-8000', '17691349399', '27', '9', '1', '陕西省', '西安市', '周至县', '周至', '2018-08-13 16:24:17', '0,27');
 
 -- ----------------------------
 -- Table structure for province
@@ -3682,29 +3692,20 @@ CREATE TABLE `recruit` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `identity` tinyint(4) DEFAULT '0' COMMENT '认证消息  0未认证  1认证',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of recruit
 -- ----------------------------
-INSERT INTO `recruit` VALUES ('1', '绿色小区', '1', '1222-8000', '445', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '', null, null, '545', null, '0');
-INSERT INTO `recruit` VALUES ('2', '绿色小区', '1', '1222-8000', '445', '155445565', '雁塔区', '西安软件圆', '3', '1', '2', '', null, null, '5456', null, '0');
-INSERT INTO `recruit` VALUES ('3', '绿色小区', '1', '1222-8000', '445', '155445565', '雁塔区', '西安软件圆', '4', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('4', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('5', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('6', 'dasdas', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('7', '绿ddasdas小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('8', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('9', 'adsa', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('10', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('11', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('12', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('13', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '3', '1', '2', '', null, null, null, null, '0');
-INSERT INTO `recruit` VALUES ('15', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '4', '1', '0', '', null, null, '544', '2018-08-01 11:06:07', '0');
-INSERT INTO `recruit` VALUES ('14', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '5', '1', '0', '', null, null, null, '2018-08-01 11:06:14', '0');
-INSERT INTO `recruit` VALUES ('16', '我是公司名称', '1', '1200-5000', '销售', '15987456874', '20180730\\4e72e4977c2f1126bfbc6754c92c4485.png', null, '4', '西安软件新城', '2', '陕西省', '西安市', '雁塔区', '陕西省西安市雁塔区', null, '0');
-INSERT INTO `recruit` VALUES ('17', '我是公司名称', '1', '1200-5000', '销售', '15987456874', '20180731\\b68b831f7e72f44bf435395eb040bc3e.png', '我是详细说明', '4', '西安软件新城', '1', '陕西省', '西安市', '雁塔区', '陕西省西安市雁塔区', null, '0');
-INSERT INTO `recruit` VALUES ('18', 'www', '1', 'ww-ww', 'wwww', 'aaaa', '20180802\\ba0b3d7f143f18bf0e49cbab3a6cd2fb.jpg', 'w', '9', 'aaaaaaaaaa', '2', '北京市', '市辖区', '东城区', '北京市市辖区东城区', '2018-08-02 17:43:03', '1');
+INSERT INTO `recruit` VALUES ('1', 'asda', '1', '5000-8000', 'sadas', 'sad', '[\"20180811\\/8167b7a03efce7578bf40be00e922586.png\"]', 'dsa', '1', 'dsasd', '0', '天津市', '天津市', '和平区', '天津市天津市和平区', '2018-08-13 11:03:10', '0');
+INSERT INTO `recruit` VALUES ('2', '我是公司', '1', '5000-8000', '前端', '234567', '[\"20180811\\/3ca7b27cbf7e6185fd0d8faebbe760f2.jpg\"]', '是啥', '2', '对的', '0', '陕西省', '西安市', '新城区', '陕西省西安市新城区', '2018-08-13 11:03:06', '0');
+INSERT INTO `recruit` VALUES ('3', '来咯默默', '1', '8000-10000', '来咯额', 'HK哦OK了', '[\"20180811\\/84ffbc87e8d8e761e0821346daad8517.jpg\"]', '来咯哦哦', '1', '涂抹', '0', '内蒙古自治区', '呼和浩特市', '新城区', '内蒙古自治区呼和浩特市新城区', '2018-08-13 11:03:02', '0');
+INSERT INTO `recruit` VALUES ('4', '兔兔', '1', '<3000', '图', '赶', '[\"20180811\\/204156bc5b78197da8c0e4d5792ee757.jpg\"]', '了', '1', '来咯呢', '0', '天津市', '天津市', '和平区', '天津市天津市和平区', '2018-08-13 11:02:58', '0');
+INSERT INTO `recruit` VALUES ('5', 'sdas', '1', '5000-8000', 'sdas', 'sada', '[\"20180811\\/b3bee483c4e72417db605458e4114413.png\"]', 'sda', '1', 'sad', '0', '吉林省', '长春市', '南关区', '吉林省长春市南关区', '2018-08-13 11:02:54', '0');
+INSERT INTO `recruit` VALUES ('6', 'sad', '1', '<3000', 'sadas', '萨达萨达', '[\"20180811\\/df83c5a36231104f77e3424033edc89d.jpg\"]', 'sadas', '1', 'dasdas', '0', '天津市', '天津市', '和平区', '天津市天津市和平区', '2018-08-13 11:02:50', '0');
+INSERT INTO `recruit` VALUES ('7', 'xzX', '1', '5000-8000', 'zXz', 'xzX', '[\"20180811\\/0d668ca8dfff53c1fc71191b7780fc4f.png\"]', 'xzX', '1', 'xzXZ', '0', '天津市', '天津市', '和平区', '天津市天津市和平区', '2018-08-13 11:02:46', '0');
+INSERT INTO `recruit` VALUES ('8', 'asas', '1', '3000-5000', 'saa', 'xzX', '[\"20180811\\/e0ad581d6492fd7fa8be28b9dd0d0f3a.png\"]', 'xz', '1', 'xZX', '0', '山西省', '太原市', '小店区', '山西省太原市小店区', '2018-08-13 11:02:42', '0');
+INSERT INTO `recruit` VALUES ('9', 'asas', '1', '3000-5000', 'saa', 'xzX', '[\"20180811\\/e0ad581d6492fd7fa8be28b9dd0d0f3a.png\"]', 'xz', '1', 'xZX', '0', '山西省', '太原市', '小店区', '山西省太原市小店区', '2018-08-13 11:02:38', '1');
 
 -- ----------------------------
 -- Table structure for rent
@@ -3722,7 +3723,7 @@ CREATE TABLE `rent` (
   `img` varchar(255) DEFAULT NULL COMMENT '详情图片',
   `des` varchar(255) DEFAULT NULL COMMENT '详细说明',
   `user_id` int(11) DEFAULT NULL COMMENT '用户id ',
-  `type` tinyint(4) DEFAULT NULL COMMENT '求购房源类型  1-新房 2-二手房 3-商铺 4-写字楼 5-公寓 ',
+  `type` tinyint(4) DEFAULT '1' COMMENT '求购房源类型  1-新房 2-二手房 3-商铺 4-写字楼 5-公寓 ',
   `status` tinyint(4) DEFAULT '2' COMMENT '消息状态 1审核通过 0未通过 2审核中',
   `province` varchar(255) DEFAULT NULL COMMENT '省',
   `city` varchar(255) DEFAULT NULL COMMENT '市',
@@ -3730,28 +3731,15 @@ CREATE TABLE `rent` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `identity` tinyint(4) DEFAULT '0' COMMENT '认证消息  0未认证  1认证',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of rent
 -- ----------------------------
-INSERT INTO `rent` VALUES ('1', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '1', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('2', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '3', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('3', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '4', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('4', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('5', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('7', '绿ddasdas小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('8', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '1', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('9', 'adsa', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '1', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('10', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '1', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('11', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('17', '我是标题', '1', '西安软件新城', '陕西省西安市雁塔区', '12-56', '1200-5000', '15987456874', '20180731\\94b2c2e61cdd195f815310b50ce934eb.png', '我是详情', '4', '3', '1', '陕西省', '西安市', '雁塔区', '2018-08-05 14:02:19', '0');
-INSERT INTO `rent` VALUES ('13', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '3', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('15', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '4', '1', '1', '1', '0', null, null, null, '2018-08-01 11:05:25', '0');
-INSERT INTO `rent` VALUES ('14', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '5', '1', '1', '1', '1', null, null, null, '2018-08-01 11:05:34', '0');
-INSERT INTO `rent` VALUES ('6', 'dasdas', '2', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '2', '1', '1', '1', '2', null, null, null, null, '0');
-INSERT INTO `rent` VALUES ('16', '我是标题', '1', '西安软件新城', '陕西省西安市雁塔区', '12-56', '1200-5000', '15987456874', '20180730\\4cbeb6d57a3b186ffdad2779b9e3a296.png', '我是详细描述', '4', '2', '1', '陕西省', '西安市', '雁塔区', '2018-08-05 14:01:13', '0');
-INSERT INTO `rent` VALUES ('18', 'aaa', '1', 'kk', '北京市市辖区东城区', 'gg-hh', 'dd-ff', 'jj', '20180802\\37b989e1df11cfec48c82f32a1083378.jpg', 'zzz', '9', '4', '2', '北京市', '市辖区', '东城区', '2018-08-02 17:54:52', '1');
+INSERT INTO `rent` VALUES ('1', '秃头', '1', 'ill哦哦哦', '天津市天津市和平区', '50-100', '500-1500', '咯哦哦哦OK了', '[\"20180811\\/400c077a0f4b1dc03be3c998794fbe87.jpg\"]', '他咯呢大爱', '1', '4', '0', '天津市', '天津市', '和平区', '2018-08-13 11:02:18', '1');
+INSERT INTO `rent` VALUES ('2', '秃头', '1', 'ill哦哦哦', '天津市天津市和平区', '50-100', '500-1500', '咯哦哦哦OK了', '[\"20180811\\/400c077a0f4b1dc03be3c998794fbe87.jpg\"]', '他咯呢大爱', '1', '4', '0', '天津市', '天津市', '和平区', '2018-08-13 11:02:13', '1');
+INSERT INTO `rent` VALUES ('3', '来咯哦哦', '1', '所罗门', '天津市天津市和平区', '50-100', '<500', '了了了了了了了了', '[\"20180811\\/c1339f95d2a4fdbb1eddaa6f99431ba2.jpg\"]', '来咯哦哦', '1', '4', '0', '天津市', '天津市', '和平区', '2018-08-13 11:02:23', '1');
+INSERT INTO `rent` VALUES ('4', 'dasd', '1', 'asdas', '河北省石家庄市长安区', '50-100', '1500-2500', 'sdadsa', '[\"20180811\\/8fcc660f92b72bf38d448286f0709426.png\"]', 'sdasda', '1', '4', '0', '河北省', '石家庄市', '长安区', '2018-08-13 11:02:28', '1');
 
 -- ----------------------------
 -- Table structure for sell_house
@@ -3768,7 +3756,7 @@ CREATE TABLE `sell_house` (
   `address` varchar(255) DEFAULT NULL COMMENT '具体地址',
   `img` varchar(255) DEFAULT NULL COMMENT '详情图片',
   `user_id` int(11) DEFAULT NULL,
-  `type` tinyint(4) DEFAULT NULL COMMENT '求购房源类型  1-新房 2-二手房 3-商铺 4-写字楼 5-公寓',
+  `type` tinyint(4) DEFAULT '1' COMMENT '求购房源类型  1-新房 2-二手房 3-商铺 4-写字楼 5-公寓',
   `status` tinyint(4) DEFAULT '2' COMMENT '消息状态 1审核通过 0未通过 2审核中',
   `province` varchar(255) DEFAULT NULL COMMENT '省',
   `city` varchar(255) DEFAULT NULL COMMENT '市',
@@ -3777,33 +3765,12 @@ CREATE TABLE `sell_house` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `identity` tinyint(4) DEFAULT '0' COMMENT '认证消息  0未认证  1认证',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of sell_house
 -- ----------------------------
-INSERT INTO `sell_house` VALUES ('1', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '1', '1', null, null, null, null, '2018-08-01 16:16:54', '0');
-INSERT INTO `sell_house` VALUES ('2', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '1', '1', null, null, null, null, '2018-08-01 16:17:54', '1');
-INSERT INTO `sell_house` VALUES ('3', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '1', '1', null, null, null, null, '2018-08-01 16:17:56', '1');
-INSERT INTO `sell_house` VALUES ('4', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '1', '1', null, null, null, null, '2018-08-01 16:17:56', '1');
-INSERT INTO `sell_house` VALUES ('5', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '1', null, null, null, null, '2018-08-01 16:17:58', '1');
-INSERT INTO `sell_house` VALUES ('6', 'dasdas', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('7', '绿ddasdas小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '1', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('8', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '3', '1', null, null, null, null, '2018-08-01 11:21:49', '0');
-INSERT INTO `sell_house` VALUES ('9', 'adsa', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '3', '1', null, null, null, null, '2018-08-01 11:21:51', '0');
-INSERT INTO `sell_house` VALUES ('10', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('11', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('12', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('13', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '2', '9', '1', null, null, null, null, '2018-08-01 11:23:14', '0');
-INSERT INTO `sell_house` VALUES ('15', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('14', '绿色小区', '1', '1222-8000', '50-80', '155445565', '雁塔区', '西安软件圆', '', '1', '2', '2', null, null, null, null, null, '0');
-INSERT INTO `sell_house` VALUES ('16', '凡人歌', '1', '15-52', '25-65', '热', null, '无人区热', null, '2', '1', '0', '110000', '110100', '110101', null, null, '0');
-INSERT INTO `sell_house` VALUES ('17', '额外全额', '1', '12-25', '89-100', '4154', '130200130203', '恶趣味无群', null, '3', '4', '1', '130000', '130200', '130203', null, null, '0');
-INSERT INTO `sell_house` VALUES ('19', 'dassad', '1', 'dasd-asd', 'dasd-dsad', 'asd', '长安区', 'asdsa', null, '1', '1', '2', '130000', '130100', '长安区', null, null, '0');
-INSERT INTO `sell_house` VALUES ('21', 'dssa', '1', '-', '-', 'sadasda', '河北省唐山市古冶区', 'wedw', null, '1', '2', '1', '北京市', '唐山市', '古冶区', null, '2018-08-02 19:42:55', '0');
-INSERT INTO `sell_house` VALUES ('22', '我是标题', '1', '1200-5000', '12-56', '15987456874', '陕西省西安市雁塔区', '西安软件新城', '20180730\\8d545a1ca09d2fac7743a710f6d895e6.png', '4', '2', '1', '陕西省', '西安市', '雁塔区', null, null, '0');
-INSERT INTO `sell_house` VALUES ('23', '我是标题', '1', '1200-5000', '12-56', '15987456874', '陕西省西安市雁塔区', '西安软件新城', '20180731\\477319b8b58167dd4b9cf87c832c7a36.png', '4', '2', '1', '陕西省', '西安市', '雁塔区', '我是详细说明', null, '0');
-INSERT INTO `sell_house` VALUES ('24', 'ww', '3', 'ww-ww', 'w-w', 'ww', '北京市市辖区东城区', 'wwww', '20180802\\abdf38210d620eee689c7629fb1a0297.jpg', '9', '4', '2', '北京市', '市辖区', '东城区', null, '2018-08-02 17:08:18', '0');
+INSERT INTO `sell_house` VALUES ('2', '空军建军节', '1', '12000-16000', '<50', '啦咯啦咯啦咯', '内蒙古自治区呼和浩特市新城区', '咯默默摸摸哦哦弄', '[\"20180811\\/4257bb05f501acaeb8b9fe429382e544.jpg\"]', '1', '4', '0', '内蒙古自治区', '呼和浩特市', '新城区', '咯摸摸摸', '2018-08-13 11:01:41', '0');
 
 -- ----------------------------
 -- Table structure for system
@@ -3812,13 +3779,17 @@ DROP TABLE IF EXISTS `system`;
 CREATE TABLE `system` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `money` varchar(255) DEFAULT NULL,
+  `get_img` varchar(255) DEFAULT NULL COMMENT '求购页面图片',
+  `get_type_img` varchar(255) DEFAULT NULL COMMENT '求购分类页面图片',
+  `publish_img` varchar(255) DEFAULT NULL COMMENT '发布页面图片',
+  `lb_img` varchar(255) DEFAULT NULL COMMENT '首页轮播',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of system
 -- ----------------------------
-INSERT INTO `system` VALUES ('1', '1');
+INSERT INTO `system` VALUES ('1', '1', '20180810/c985be112a052173439fbb9f23324711.jpg', '20180810/0e6922acb3a06a739387c34363a2b875.jpg', '20180810/8b1597627647de511ea7095a20db6734.jpg', '[\"20180810\\/16e4a0bd547102de31486780860221e8.jpg\",\"20180810\\/db0a8b3b87c9049ab6ffddb2bd5deb59.jpg\",\"20180810\\/554981e47b5220bc4ad51e992caab6db.jpg\"]');
 
 -- ----------------------------
 -- Table structure for user
@@ -3830,7 +3801,7 @@ CREATE TABLE `user` (
   `wx_name` varchar(255) DEFAULT NULL COMMENT '微信名称',
   `phone` varchar(45) DEFAULT NULL COMMENT '手机号',
   `wx_avaurl` varchar(255) DEFAULT NULL COMMENT '微信头像',
-  `wx_sex` tinyint(4) DEFAULT NULL COMMENT '性别',
+  `wx_sex` tinyint(4) DEFAULT '0' COMMENT '性别',
   `last_login` datetime DEFAULT NULL COMMENT '最后一次登陆时间',
   `longitude` varchar(75) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(75) DEFAULT NULL COMMENT '纬度',
@@ -3839,16 +3810,21 @@ CREATE TABLE `user` (
   `role` tinyint(4) DEFAULT '0' COMMENT '1.经纪人  0.个人 2经纪人审核中',
   `open_id` varchar(255) DEFAULT NULL COMMENT '微信open_id',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '张三', '张三的微信', '123556854', '/uploads/1.png', '1', '2018-07-26 16:35:25', null, null, '北京市', '2018-08-02 18:34:33', '1', null);
-INSERT INTO `user` VALUES ('2', '李四', '李四的微信', '123556854', '/uploads/1.png', '1', '2018-07-26 16:35:25', '', '', '', '2018-07-30 15:06:07', '2', null);
-INSERT INTO `user` VALUES ('3', '张三', '王麻子的微信', '158764452584', '/uploads/1.png', '1', '2018-07-26 16:35:25', '', '', '', '2018-07-30 15:08:16', '1', null);
-INSERT INTO `user` VALUES ('4', '小红', '小红的微信', '123556854', '/uploads/1.png', '1', '2018-07-26 16:35:25', '', '', '', '2018-07-26 18:48:34', '1', null);
-INSERT INTO `user` VALUES ('5', '小绿', '小绿的微信', '125555526', '/uploads/1.png', '1', '2018-07-26 16:44:09', null, null, null, '2018-07-26 17:03:05', '0', null);
-INSERT INTO `user` VALUES ('7', '小白', null, '1321321312', null, null, null, null, null, null, '2018-07-28 18:05:40', '1', null);
-INSERT INTO `user` VALUES ('8', null, 'wded', null, 'http:sdafadsfdsf', '0', '2018-07-30 14:52:23', null, null, null, '2018-07-30 14:52:23', '0', 'oHpuZ5Ths0LY6GDWEVBybZ6RfnxI');
-INSERT INTO `user` VALUES ('9', '', '倩倩', '', 'https://wx.qlogo.cn/mmopen/vi_32/32mpMfZQzMicyEMVT5XRvfhzJc299DzVH1jQHxfU5QG7IfZ4SJnPGUgZU2dSA0h0aV2vyUHXc0ogH9GoRe2P6IQ/132', null, '2018-08-06 09:48:24', null, null, null, '2018-08-06 09:48:27', '2', 'oleDx5HLXEGgBuOaQDe8K8YxoOic');
+INSERT INTO `user` VALUES ('18', '昆仑行者', '秦峰', '17612900706', 'https://wx.qlogo.cn/mmopen/vi_32/QtoNSzs8naBj0icibiaIYKlAxXXF58ZM0gdrt77OQ2Pmooniagu73Oic7h9g4fEwviczkgxC7UbU7GNbsnjKZYyrOrRQ/132', '0', '2018-08-13 16:25:29', null, null, null, '2018-08-13 16:25:29', '1', 'oleDx5JuUd-dNrJuOrJTV7WVcT3s');
+INSERT INTO `user` VALUES ('19', 'skb91382', '龙达置业｜亿润领城｜赵伟', null, 'https://wx.qlogo.cn/mmopen/vi_32/w4W0Y118hTe3tBaetpPcEONY95NzDjleeUwfgial9v2iblKxtvvQEqAxcpZpEjicFXrp1gs9XPaC5ia9wt2JGFL3OA/132', '0', '2018-08-13 11:21:43', null, null, null, '2018-08-13 11:21:43', '0', 'oleDx5FPn_TM-nPM-A_PFRs-Nhfk');
+INSERT INTO `user` VALUES ('20', '', '倩倩', '', 'https://wx.qlogo.cn/mmopen/vi_32/32mpMfZQzMicyEMVT5XRvfhzJc299DzVH1jQHxfU5QG7IfZ4SJnPGUgZU2dSA0h0aV2vyUHXc0ogH9GoRe2P6IQ/132', '0', '2018-08-13 13:44:47', null, null, null, '2018-08-13 13:44:47', '1', 'oleDx5HLXEGgBuOaQDe8K8YxoOic');
+INSERT INTO `user` VALUES ('21', '', '宋江', '', 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLeYdiaVF5aue56Gq9iaKzDVibEwcB892s0t1iau3hjpiagE5FKHnqE12pvSnYjBkFE0rzIvSwwlroiaAicA/132', '0', '2018-08-13 11:47:38', null, null, null, '2018-08-13 11:47:38', '2', 'oleDx5PTN_-eYqBhsVyP0i3zeLMs');
+INSERT INTO `user` VALUES ('22', 'skb152633', '鲁智深', null, 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKHrcLlQj9HEbWPGVLH9ia834GM3QgPhVOUGI5OmorboibO4fngjSf6PJU2INzDlia1hEJUZH8p7sOKQ/132', '0', '2018-08-13 11:43:56', null, null, null, '2018-08-13 11:43:56', '0', 'oleDx5DGUm0-sa6KgIQFxr42TTFc');
+INSERT INTO `user` VALUES ('23', 'skb119412', 'A小程序、朋友圈广告、企业官网', null, 'https://wx.qlogo.cn/mmopen/vi_32/tJUejZ75Kib1TiaFdVkDicyYn5PnAUHoVceOIkRsga8gOwGgicj2c72WHFI1BTB3oB4sPo6x0pQJfNgoXwBH106Gwg/132', '0', '2018-08-13 12:50:06', null, null, null, '2018-08-13 12:50:06', '0', 'oleDx5Jt0qfrvloCaxtrSrnYUv2M');
+INSERT INTO `user` VALUES ('24', 'skb853963', '梦幻蜗牛', null, 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJDVKh1AfQ5ZDapxQwbI3BpkX2Fd8nS3ZugsAAQBODPibbQYUjH2ic5oM0ga1PFuGDkKxPU6MicKRUTQ/132', '0', '2018-08-13 12:58:44', null, null, null, '2018-08-13 12:58:44', '0', 'oleDx5CF7jZHpc2aRPJTf_lhvVeU');
+INSERT INTO `user` VALUES ('25', 'skb260085', '风雅先生', null, 'https://wx.qlogo.cn/mmopen/vi_32/fVBZN3SxRJHM8OoYfLapkIphdmydZSSibSM4atVfss9cWKG8LpnUgJhKB0BbgUYIt0giakFFdECnNlibwgJd2Wtgw/132', '0', '2018-08-13 13:10:07', null, null, null, '2018-08-13 13:10:07', '0', 'oleDx5CGgFTHLRpWuFwcTYsywQJE');
+INSERT INTO `user` VALUES ('26', 'skb609946', '太阳之下', null, 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erLa9QM69pHz2Ox7bVRqdRnQROniaZz0XTGy7NyCZFkqr5ow9YGFLia4cc7ibo4d3pibzbIYmmIQyT85Q/132', '0', '2018-08-13 13:15:15', null, null, null, '2018-08-13 13:15:15', '0', 'oleDx5LMZnxJA-WyV-Ri_QLWzF2Y');
+INSERT INTO `user` VALUES ('27', '李海宇', '项目信息', '17691349399', 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIjGFHmunbyziaoic0Y84AnkdBHrXFuiaZWjnM1Br2ZU778Bhd4oEaSEpLDia5licseomzoW7jZo1XlTSw/132', '0', '2018-08-13 16:27:39', null, null, null, '2018-08-13 16:27:39', '1', 'oleDx5Bl7uO8e6PAWmGF12EulC5g');
+INSERT INTO `user` VALUES ('28', 'skb549981', '万马房产贾倩13636836721', null, 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLL4N6Tx7F9iaXpC7ZFG0G5icoo2yrnParjvFRMW0iamD3wGozOAZlqicaRGibd7rteHpx5FtqsSFNMTtA/132', '0', '2018-08-13 15:32:52', null, null, null, '2018-08-13 15:32:52', '0', 'oleDx5HAUb2KY_D7igY62rpFsQCw');
+INSERT INTO `user` VALUES ('29', '', '独', '', 'https://wx.qlogo.cn/mmopen/vi_32/nFZWojDia4Ieq45nzRPBQuNdKKJJDXAdc6vSAMUE6LIISBibaSJ9SKvg2j51ic7RseQWyxfefdVgv8ibx98micjqvOQ/132', '0', '2018-08-13 14:35:47', null, null, null, '2018-08-13 14:35:47', '1', 'oleDx5N605re-lFbGonOtInw_td0');
+INSERT INTO `user` VALUES ('30', 'skb465733', '商铺、住宅、公寓、销售！', null, 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epXyNd99WVsDWgfLYlY3UDfwicsJmgFibwMu1qp7GgIkwuvwl3P4GiaicPbtkWxekhxMjGvmGnh7RG9Ig/132', '0', '2018-08-13 15:50:15', null, null, null, '2018-08-13 15:50:15', '0', 'oleDx5P7pIACe9tVJi_pkQl1juJc');
