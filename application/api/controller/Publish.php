@@ -57,4 +57,14 @@ class Publish extends Rest
             echo json(202, '');
         }
     }
+    /*多张图片上传*/
+    public function upFiles()
+    {
+        $file = upFiles('img');
+        if($file){
+            echo json(200, $file);
+        } else {
+            echo json(202, '');
+        }
+    }
 }

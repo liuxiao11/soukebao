@@ -20,7 +20,7 @@ class Info extends Model
         } else {
             $where = '';
         }
-        $data = findMorePgS('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
+        $data = findMorePgS('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
         $data = isset($data) && !empty($data) ? $data : '';
         return $data;
     }
@@ -58,7 +58,7 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findMorePgS('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
+        $data = findMorePgS('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
         $data = isset($data) && !empty($data) ? $data : '';
         return $data;
     }
@@ -77,7 +77,7 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findMorePgS('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
+        $data = findMorePgS('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name,a.img,a.des', $where, ['status' => 1], 'a.id', 'a.id desc', 10);
         $data = isset($data) && !empty($data) ? $data : '';
         return $data;
     }
@@ -139,24 +139,20 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findone('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.user_id,a.type', ['a.id' => input('id')]);
+        $data = findone('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.user_id,a.type,a.img', ['a.id' => input('id')]);
         return $data;
     }
 
     public function add()
     {
         $data = $_POST;
-        $data['price'] = $data['price_min'] . "-" . $data['price_max'];
-        $data['area'] = $data['area_min'] . "-" . $data['area_max'];
         $city = findone('city', [], 'name', ['code' => $data['city']]);
         $province = findone('province', [], 'name', ['code' => $data['province']]);
         $data['city'] = $city['name'];
         $data['province'] = $province['name'];
         $data['district'] = $data['province'] . $data['city'] . $data['area1'];
-        unset($data['price_min']);
-        unset($data['price_max']);
-        unset($data['area_min']);
-        unset($data['area_max']);
+        $data['status'] = 1;
+        $data['img'] = json_encode(upFiles('img'));
         $add = addData('sell_house', $data);
         if ($add) {
             return true;
@@ -169,17 +165,23 @@ class Info extends Model
     public function edit()
     {
         $data = $_POST;
-        $data['price'] = $data['price_min'] . "-" . $data['price_max'];
-        $data['area'] = $data['area_min'] . "-" . $data['area_max'];
         $city = findone('city', [], 'name', ['code' => $data['city']]);
         $province = findone('province', [], 'name', ['code' => $data['province']]);
         $data['city'] = $city['name'];
         $data['province'] = $province['name'];
         $data['district'] = $data['province'] . $data['city'] . $data['area1'];
-        unset($data['price_min']);
-        unset($data['price_max']);
-        unset($data['area_min']);
-        unset($data['area_max']);
+        $find = findone('rent',[],'img',['id' => input('id')]);
+        $img = json_decode($find['img'],true);
+        if($img){
+            foreach($img as $k =>$item){
+                @unlink($_SERVER['HTTP_HOST']."/uploads/".$img[$k]);
+            }
+        }
+        $file = upFiles('img');
+        if($file != '')
+        {
+            $data['img'] = json_encode($file);
+        }
         $edit = edit('sell_house', ['id' => input('id')], $data);
         if ($edit) {
             return true;
@@ -193,13 +195,19 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findone('get_house', $join, 'a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name', ['a.id' => input('id')]);
+        $data = findone('get_house', $join, 'a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name,a.user_id', ['a.id' => input('id')]);
         return $data;
     }
 
     public function addGet()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $data['status'] = 1;
         $add = addData('get_house', $data);
         if ($add) {
             return true;
@@ -212,6 +220,11 @@ class Info extends Model
     public function editGet()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
         $edit = edit('get_house', ['id' => input('id')], $data);
         if ($edit) {
             return true;
@@ -225,13 +238,20 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findone('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type', ['a.id' => input('id')]);
+        $data = findone('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,u.id as user_id', ['a.id' => input('id')]);
         return $data;
     }
 
     public function addRent()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $data['status'] = 1;
+        $data['img'] = json_encode(upFiles('img'));
         $add = addData('rent', $data);
         if ($add) {
             return true;
@@ -244,6 +264,23 @@ class Info extends Model
     public function editRent()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $find = findone('rent',[],'img',['id' => input('id')]);
+        $img = json_decode($find['img'],true);
+        if($img){
+            foreach($img as $k =>$item){
+                @unlink($_SERVER['HTTP_HOST']."/uploads/".$img[$k]);
+            }
+        }
+        $file = upFiles('img');
+        if($file != '')
+        {
+            $data['img'] = json_encode($file);
+        }
         $edit = edit('rent', ['id' => input('id')], $data);
         if ($edit) {
             return true;
@@ -257,13 +294,20 @@ class Info extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findone('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name', ['a.id' => input('id')]);
+        $data = findone('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name,a.img,a.user_id,a.des', ['a.id' => input('id')]);
         return $data;
     }
 
     public function addRecruit()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $data['status'] = 1;
+        $data['img'] = json_encode(upFiles('img'));
         $add = addData('recruit', $data);
         if ($add) {
             return true;
@@ -276,6 +320,23 @@ class Info extends Model
     public function editRecruit()
     {
         $data = $_POST;
+        $city = findone('city', [], 'name', ['code' => $data['city']]);
+        $province = findone('province', [], 'name', ['code' => $data['province']]);
+        $data['city'] = $city['name'];
+        $data['province'] = $province['name'];
+        $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $find = findone('rent',[],'img',['id' => input('id')]);
+        $img = json_decode($find['img'],true);
+        if($img){
+            foreach($img as $k =>$item){
+                @unlink($_SERVER['HTTP_HOST']."/uploads/".$img[$k]);
+            }
+        }
+        $file = upFiles('img');
+        if($file != '')
+        {
+            $data['img'] = json_encode($file);
+        }
         $edit = edit('recruit', ['id' => input('id')], $data);
         if ($edit) {
             return true;

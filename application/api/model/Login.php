@@ -25,7 +25,28 @@ class Login extends Model
         } else {
             $where1 = '';
         }
-        $get = Db::query("SELECT a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name,a.create_time FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  $where1  `status` = 1  AND `a`.`city` = '$city' ORDER BY `a`.`id` DESC");
+        $get2 = Db::query("SELECT a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name,a.create_time,u.wx_avaurl,a.pay_id FROM `get_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  $where1  `status` = 1  AND `a`.`city` = '$city' ORDER BY `a`.`id` DESC");
+        $get = [];
+        if($get2){
+            foreach($get2 as $item)
+            {
+                if($item['pay_id'] != 0)
+                {
+                    $pay_id = explode(',',$item['pay_id']);
+                    if(in_array($data['user_id'],$pay_id))
+                    {
+                        $item['is_pay'] = 1;
+                    }else{
+                        $item['is_pay'] = 0;
+                    }
+
+                }else{
+                    $item['is_pay'] = 0;
+                }
+                unset($item['pay_id']);
+                $get[] = $item;
+            }
+        }
         /*出租信息*/
         $rent = Db::query("SELECT a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,a.create_time,a.des FROM `rent` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  $where  `status` = 1  AND `a`.`city` = '$city' ORDER BY `a`.`id` DESC");
         /*招聘信息*/
@@ -96,7 +117,9 @@ class Login extends Model
             $arr = [
                 'wx_name' => $_GET['nick'],
                 'wx_avaurl' => $_GET['avaurl'],
+                'user_name'=> 'skb'.rand(000000,999999),
                 'open_id' => $openid,
+                'last_login' => date('Y-m-d:H:i:s'),
                 'create_time' => date('Y-m-d:H:i:s')
             ];
             $add = addId('user', $arr);
@@ -126,6 +149,15 @@ class Login extends Model
     {
         $data = findMore('city', [], 'id,code,name', '', '', '');
         return $data;
+    }
+    public function lb()
+    {
+        $data = findone('system', [], '*',['id' => 1]);
+        $info['lb_img'] = json_decode($data['lb_img'],true);
+        $info['get_img'] = $data['get_img'];
+        $info['get_type_img'] = $data['get_type_img'];
+        $info['publish_img'] = $data['publish_img'];
+        return $info;
     }
 
 }

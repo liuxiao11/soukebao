@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html";i:1533090067;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html";i:1534126886;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533886426;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>后台模板 HTML</title>
+    <title>搜客宝后台</title>
     <link rel="stylesheet" href="/frame/layui/css/layui.css">
     <link rel="stylesheet" href="/frame/static/css/style.css">
     <link rel="icon" href="/frame/static/image/code.png">
@@ -123,6 +123,7 @@
                         <dd><a href="<?php echo url('System/category'); ?>"><i class="layui-icon">&#xe621;</i>分类列表</a></dd>
                         <dd><a href="<?php echo url('System/index'); ?>"><i class="layui-icon">&#xe621;</i>设置经纪人付款金额</a></dd>
                         <dd><a href="<?php echo url('System/editAdmin'); ?>"><i class="layui-icon">&#xe621;</i>管理员信息</a></dd>
+                        <dd><a href="<?php echo url('System/page'); ?>"><i class="layui-icon">&#xe621;</i>页面图片设置</a></dd>
                     </dl>
                 </li>
 
@@ -168,6 +169,7 @@
                     <th>用户角色</th>
                     <th>联系方式</th>
                     <th>房子类型</th>
+                    <th>房子图片</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -190,6 +192,13 @@
                     <?php if(is_array($category) || $category instanceof \think\Collection || $category instanceof \think\Paginator): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($vo['type'] == $v['id']): ?>
                             <td><?php echo $v['name']; ?></td>
                         <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                    <td>
+                        <?php 
+                            $img = json_decode($vo['img'],true);
+                         if(is_array($img) || $img instanceof \think\Collection || $img instanceof \think\Paginator): $i = 0; $__LIST__ = $img;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                            <img src="/uploads/<?php echo $v; ?>" style="width: 25px ;" onclick="previewImg(this);">
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                    </td>
                     <td>
                         <a href="<?php echo url('Info/edit',['id'=>$vo['id']]); ?>" class="layui-btn layui-btn-mini layui-btn-normal"
                            lay-event="edit">编辑</a>
@@ -248,3 +257,22 @@
 </script>
 </body>
 </html>
+<script type="application/javascript">
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //捕获页
+        layer.open({
+            type: 1,
+            shade: false,
+            title: false, //不显示标题
+            area: [900+'px', 500+'px'],
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
+</script>

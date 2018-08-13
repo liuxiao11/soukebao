@@ -4,7 +4,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\User as U;
 
-class User extends Controller
+class User extends Base
 {
     /*用户列表*/
     public function index()

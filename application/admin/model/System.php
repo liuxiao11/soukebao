@@ -79,17 +79,19 @@ class System extends Model
     {
         $data = $_POST;
         if ($data) {
-            $find = findone('admin', [], 'id,admin_name', ['id' => $data['id']]);
+            $file = upFiles('image');
+//            $data['lb_img'] = json_encode($file);
+            $find = findone('admin', [], 'id,admin_name,admin_pwd,kf_phone', ['id' => $data['id']]);
             if ($find) {
                 $data['admin_pwd'] = md5($data['admin_pwd']);
                 edit('admin', ['id' => $find['id']], $data);
             } else {
                 $data['admin_pwd'] = md5($data['admin_pwd']);
                 addId('admin', $data);
-                $data = findone('admin', [], 'id,admin_name', ['id' => $data['id']]);
+                $data = findone('admin', [], 'id,admin_name,admin_pwd,kf_phone', ['id' => $data['id']]);
             }
         } else {
-            $find = findone('admin', [], 'id,admin_name', ['id' => 1]);
+            $find = findone('admin', [], 'id,admin_name,admin_pwd,kf_phone', ['id' => 1]);
             if ($find) {
                 $data = $find;
             } else {
@@ -97,5 +99,34 @@ class System extends Model
             }
         }
         return $data;
+    }
+    public function page()
+    {
+        $data = $_FILES;
+        if ($data) {
+            $file = upFiles('lb_img');
+            $get_img = upFile('get_img');
+            $get_type_img = upFile('get_type_img');
+            $publis_img = upFile('publish_img');
+            $data1['lb_img'] = json_encode($file);
+            $data1['get_img'] = $get_img;
+            $data1['get_type_img'] = $get_type_img;
+            $data1['publish_img'] = $publis_img;
+            $find = findone('system', [], '*', ['id' => 1]);
+            if ($find) {
+                edit('system', ['id' => 1], $data1);
+            } else {
+                addId('system', $data1);
+                $data1 = findone('system', [], '*', ['id' => 1]);
+            }
+        } else {
+            $find = findone('system', [], '*', ['id' => 1]);
+            if ($find) {
+                $data1 = $find;
+            } else {
+                $data1 = '';
+            }
+        }
+        return $data1;
     }
 }

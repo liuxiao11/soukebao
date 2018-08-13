@@ -32,7 +32,7 @@ class Login extends Rest
         echo json('200', $province);
     }
 
-    /*根据经纬度定位*/
+    /*手动定位*/
     public function positions($id)
     {
         $login = new L();
@@ -63,6 +63,7 @@ class Login extends Rest
             echo json('202', '');
         }
     }
+
     /*所有市*/
     public function city()
     {
@@ -73,5 +74,57 @@ class Login extends Rest
         } else {
             echo json('200', '');
         }
+    }
+
+    /*轮播图*/
+    public function lbImg()
+    {
+        $img = new L();
+        $data = $img->lb();
+        if ($data) {
+            echo json('200', $data);
+        } else {
+            echo json('200', '');
+        }
+    }
+
+    //获得二维码
+    public function get_qrcode()
+    {
+        $token = wxToken();
+        $url = "https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=" . $token;
+        $post_data =
+            array(
+                'path' => 'pages/index/index',
+                'width' => 430
+            );
+        $post_data = json_encode($post_data);
+        $data = $this->send_post($url, $post_data);
+        $result = $this->data_uri($data, 'image/png');
+        return $result;
+    }
+
+    //二进制转图片image/png
+    public function data_uri($contents, $mime)
+    {
+        $base64 = base64_encode($contents);
+        return ('data:' . $mime . ';base64,' . $base64);
+    }
+
+    protected function send_post($url, $post_data)
+    {
+        $options = array(
+            'http' => array(
+                'method' => 'POST',
+                'header' => 'Content-type:application/json',
+                //header 需要设置为 JSON
+                'content' => $post_data,
+                'timeout' => 60
+                //超时时间
+            )
+        );
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        return $result;
     }
 }

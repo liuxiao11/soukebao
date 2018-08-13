@@ -4,7 +4,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\System as S;
 
-class System extends Controller
+class System extends Base
 {
     /*设置经纪人付费金额*/
     public function index()
@@ -68,8 +68,20 @@ class System extends Controller
     {
         $user = new S;
         $data = $user->editAdmin();
+//        $data['img'] = json_decode($data['lb_img'],true);
         $user = session('admin');
         $this->assign(['admin_name' => $user, 'list' => $data]);
         return $this->fetch();
     }
+    /*页面信息图片*/
+    public function page()
+    {
+        $user = new S;
+        $data = $user->page();
+        $data['lb_img'] = json_decode($data['lb_img'],true);
+        $user = session('admin');
+        $this->assign(['admin_name' => $user, 'list' => $data]);
+        return $this->fetch();
+    }
+
 }

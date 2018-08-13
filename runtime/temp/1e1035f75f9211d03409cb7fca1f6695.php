@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\index.html";i:1533027498;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\index.html";i:1533532246;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533886426;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>后台模板 HTML</title>
+    <title>搜客宝后台</title>
     <link rel="stylesheet" href="/frame/layui/css/layui.css">
     <link rel="stylesheet" href="/frame/static/css/style.css">
     <link rel="icon" href="/frame/static/image/code.png">
@@ -123,6 +123,7 @@
                         <dd><a href="<?php echo url('System/category'); ?>"><i class="layui-icon">&#xe621;</i>分类列表</a></dd>
                         <dd><a href="<?php echo url('System/index'); ?>"><i class="layui-icon">&#xe621;</i>设置经纪人付款金额</a></dd>
                         <dd><a href="<?php echo url('System/editAdmin'); ?>"><i class="layui-icon">&#xe621;</i>管理员信息</a></dd>
+                        <dd><a href="<?php echo url('System/page'); ?>"><i class="layui-icon">&#xe621;</i>页面图片设置</a></dd>
                     </dl>
                 </li>
 
@@ -140,7 +141,7 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>用户列表</legend>
             </fieldset>
-            <a href="<?php echo url('User/add'); ?>" class="layui-btn btn-add btn-default" id="btn-add" style="float: left">添加</a>
+            <!--<a href="<?php echo url('User/add'); ?>" class="layui-btn btn-add btn-default" id="btn-add" style="float: left">添加</a>-->
 			<span class="fr">
 				<form class="layui-form layui-form-pane" method="post" action="">
                     <span class="layui-form-label">搜索条件：</span>

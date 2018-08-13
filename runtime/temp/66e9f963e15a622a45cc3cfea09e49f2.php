@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\agent.html";i:1533091768;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\agent.html";i:1533709878;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,6 +166,7 @@
                     <th>用户角色</th>
                     <th>联系方式</th>
                     <th>房子类型</th>
+                    <th>房子图片</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -188,6 +189,7 @@
                     <?php if(is_array($category) || $category instanceof \think\Collection || $category instanceof \think\Paginator): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if($vo['type'] == $v['id']): ?>
                     <td><?php echo $v['name']; ?></td>
                     <?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                    <td><img src="/uploads/<?php echo $vo['img']; ?>" style="width:25px;" onclick="previewImg(this);"></td>
                     <td>
                         <a href="<?php echo url('User/agentPass',['id'=>$vo['id']]); ?>" class="layui-btn layui-btn-mini"
                            lay-event="detail">审核通过</a>
@@ -246,3 +248,21 @@
 </script>
 </body>
 </html>
+<script type="application/javascript">
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //捕获页
+        layer.open({
+            type: 1,
+            shade: false,
+            title: false, //不显示标题
+            area: [900+'px', 500+'px'],
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+</script>

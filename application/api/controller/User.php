@@ -21,6 +21,16 @@ class User extends Rest
             echo json(202, '');
         }
     }
+    public function kfPhone()
+    {
+        $user = new U;
+        $find = $user->kfPhone();
+        if ($find) {
+            echo json(200, $find);
+        } else {
+            echo json(202, '');
+        }
+    }
 
     /*个人信息修改*/
     public function infoEdit()
@@ -64,7 +74,7 @@ class User extends Rest
             echo json(202, '');
         }
     }
-    function upFile()
+    public function upFile()
     {
         $file = request()->file('img');
         if ($file) {
@@ -77,6 +87,16 @@ class User extends Rest
             }
         } else {
             return "";
+        }
+    }
+    public function pay()
+    {
+        $type = new U;
+        $data = $type->pay();
+        if ($data) {
+            echo json(200, $data);
+        } else {
+            echo json(202, '');
         }
     }
 }

@@ -17,7 +17,15 @@ class User extends Model
             return false;
         }
     }
-
+    public function kfPhone()
+    {
+        $find = findone('admin', [], 'kf_phone', ['id' => 1]);
+        if ($find) {
+            return $find['kf_phone'];
+        } else {
+            return false;
+        }
+    }
     /*个人信息修改*/
     public function edit()
     {
@@ -40,13 +48,34 @@ class User extends Model
             ['user u', 'u.id = a.user_id'],
         ];
         /*卖房信息*/
-        $sell = findMoreS('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,a.create_time,a.des,a.status', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $sell11 = findMoreS('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,a.create_time,a.des,a.status,a.identity', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $sell = [];
+        if ($sell11) {
+            foreach ($sell11 as $item) {
+                $item['img'] = json_decode($item['img'], true)[0];
+                $sell[] = $item;
+            }
+        }
         /*买房信息*/
-        $get = findMoreS('get_house', $join, 'a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name,a.create_time,a.status', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $get = findMoreS('get_house', $join, 'a.id,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.name,a.create_time,a.status,u.wx_avaurl', '', ['user_id' => $id['id']], '', 'a.id desc');
         /*出租信息*/
-        $rent = findMoreS('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,a.create_time,a.des,a.status', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $rent111 = findMoreS('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img,a.create_time,a.des,a.status,a.identity', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $rent = [];
+        if ($rent111) {
+            foreach ($rent111 as $item) {
+                $item['img'] = json_decode($item['img'], true)[0];
+                $rent[] = $item;
+            }
+        }
         /*招聘信息*/
-        $recruit = findMoreS('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name,a.img,a.create_time,a.des,a.status', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $recruit11 = findMoreS('recruit', $join, 'a.id,a.name,a.phone,a.job,a.price,a.role,a.address,u.user_name,a.img,a.create_time,a.des,a.status,a.identity', '', ['user_id' => $id['id']], '', 'a.id desc');
+        $recruit = [];
+        if ($recruit11) {
+            foreach ($recruit11 as $item) {
+                $item['img'] = json_decode($item['img'], true)[0];
+                $recruit[] = $item;
+            }
+        }
         if($get){
             foreach($get as $item){
                 $item['source'] = 1;
@@ -111,7 +140,16 @@ class User extends Model
     /*所有房源类型*/
     public function type()
     {
-        $type = findMore('category',[],'id,name','','','');
+        $type = findMore('category',[],'id,name,icon,color','','','');
         return $type;
+    }
+    public function pay()
+    {
+        $find = findone('system', [], 'money', ['id' => 1]);
+        if ($find) {
+            return $find['money'];
+        } else {
+            return '';
+        }
     }
 }

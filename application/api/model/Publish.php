@@ -24,6 +24,9 @@ class Publish extends Model
     {
         $data = Request::instance()->param();
         $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $img = json_encode($data['img']);
+        unset($data['img']);
+        $data['img'] = $img;
         $add = addId('sell_house', $data);
         if ($add) {
             return $add;
@@ -37,6 +40,9 @@ class Publish extends Model
     {
         $data = Request::instance()->param();
         $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $img = json_encode($data['img']);
+        unset($data['img']);
+        $data['img'] = $img;
         $add = addId('rent', $data);
         if ($add) {
             return $add;
@@ -50,6 +56,9 @@ class Publish extends Model
     {
         $data = Request::instance()->param();
         $data['district'] = $data['province'] . $data['city'] . $data['area1'];
+        $img = json_encode($data['img']);
+        unset($data['img']);
+        $data['img'] = $img;
         $add = addId('recruit', $data);
         if ($add) {
             return $add;
@@ -57,4 +66,6 @@ class Publish extends Model
             return false;
         }
     }
+
+
 }

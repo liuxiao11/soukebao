@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\edit.html";i:1533090519;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\edit.html";i:1533967435;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533886426;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>后台模板 HTML</title>
+    <title>搜客宝后台</title>
     <link rel="stylesheet" href="/frame/layui/css/layui.css">
     <link rel="stylesheet" href="/frame/static/css/style.css">
     <link rel="icon" href="/frame/static/image/code.png">
@@ -123,6 +123,7 @@
                         <dd><a href="<?php echo url('System/category'); ?>"><i class="layui-icon">&#xe621;</i>分类列表</a></dd>
                         <dd><a href="<?php echo url('System/index'); ?>"><i class="layui-icon">&#xe621;</i>设置经纪人付款金额</a></dd>
                         <dd><a href="<?php echo url('System/editAdmin'); ?>"><i class="layui-icon">&#xe621;</i>管理员信息</a></dd>
+                        <dd><a href="<?php echo url('System/page'); ?>"><i class="layui-icon">&#xe621;</i>页面图片设置</a></dd>
                     </dl>
                 </li>
 
@@ -140,7 +141,7 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>卖房信息修改</legend>
             </fieldset>
-            <form class="layui-form layui-form-pane" action="" id="formdata" method="post" style="margin-left: 20px">
+            <form class="layui-form layui-form-pane" action="" id="formdata" method="post" style="margin-left: 20px" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">楼盘名称</label>
 
@@ -188,27 +189,31 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">价格范围</label>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid">-</div>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
-                        </div>
+                    <label class="layui-form-label">价格选择</label>
+                    <div class="layui-input-inline">
+                        <select name="price" lay-verify="required" lay-search="">
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="<4000">4000以下</option>
+                            <option value="4000-8000">4000-8000</option>
+                            <option value="8000-12000">8000-12000</option>
+                            <option value="12000-16000">12000-16000</option>
+                            <option value="16000-20000">16000-20000</option>
+                            <option value=">20000">20000以上</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">面积范围</label>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="area_min" placeholder="㎡" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid">-</div>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="area_max" placeholder="㎡" autocomplete="off" class="layui-input">
-                        </div>
+                    <label class="layui-form-label">面积选择</label>
+                    <div class="layui-input-inline">
+                        <select name="area" lay-verify="required" lay-search="">
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="<50">50以下</option>
+                            <option value="50-100">50-100</option>
+                            <option value="100-150">100-150</option>
+                            <option value="250-300">250-300</option>
+                            <option value="300-350">300-350</option>
+                            <option value=">350">350以上</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-pane">
@@ -254,41 +259,22 @@
                                 <?php else: ?>
                                     <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
                                 <?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                            <!--<?php if($list['type'] == 1): ?>-->
-                            <!--<option value="1" selected="">新房</option>-->
-                            <!--<option value="2">二手房</option>-->
-                            <!--<option value="3">商铺</option>-->
-                            <!--<option value="4">写字楼</option>-->
-                            <!--<option value="5">公寓</option>-->
-                            <!--<?php elseif($list['type'] == 2): ?>-->
-                            <!--<option value="1">新房</option>-->
-                            <!--<option value="2" selected="">二手房</option>-->
-                            <!--<option value="3">商铺</option>-->
-                            <!--<option value="4">写字楼</option>-->
-                            <!--<option value="5">公寓</option>-->
-                            <!--<?php elseif($list['type'] == 3): ?>-->
-                            <!--<option value="1">新房</option>-->
-                            <!--<option value="2">二手房</option>-->
-                            <!--<option value="3" selected="">商铺</option>-->
-                            <!--<option value="4">写字楼</option>-->
-                            <!--<option value="5">公寓</option>-->
-                            <!--<?php elseif($list['type'] == 4): ?>-->
-                            <!--<option value="1">新房</option>-->
-                            <!--<option value="2">二手房</option>-->
-                            <!--<option value="3">商铺</option>-->
-                            <!--<option value="4" selected="">写字楼</option>-->
-                            <!--<option value="5">公寓</option>-->
-                            <!--<?php elseif($list['type'] == 5): ?>-->
-                            <!--<option value="1">新房</option>-->
-                            <!--<option value="2">二手房</option>-->
-                            <!--<option value="3">商铺</option>-->
-                            <!--<option value="4">写字楼</option>-->
-                            <!--<option value="5" selected="">公寓</option>-->
-                            <!--<?php endif; ?>-->
-
-
                         </select>
                     </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">上传图片</label>
+
+                    <div class="layui-input-block">
+                        <input type="file" name="img[]" /> <br>
+                        <input type="file" name="img[]" /> <br>
+                        <input type="file" name="img[]" /> <br>
+                    </div>
+                    <?php 
+                    $img = json_decode($list['img'],true);
+                     if(is_array($img) || $img instanceof \think\Collection || $img instanceof \think\Paginator): $i = 0; $__LIST__ = $img;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <img src="/uploads/<?php echo $v; ?>" style="width: 150px ;padding-left: 100px" onclick="previewImg(this);" >
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </div>
                 <hr>
                 <div class="layui-form-item">
@@ -366,7 +352,7 @@
             var formData = $("#formdata").serialize();
             $.ajax({
                 type: "post",
-                url: "<?php echo url('Info/add'); ?>",
+                url: "<?php echo url('Info/edit'); ?>",
                 data: formData,//这里data传递过去的是序列化以后的字符串
                 success: function (data) {
                     if (data) {
@@ -431,4 +417,23 @@
 
 
             });
+</script>
+<script type="application/javascript">
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //捕获页
+        layer.open({
+            type: 1,
+            shade: false,
+            title: false, //不显示标题
+            area: [900+'px', 500+'px'],
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
 </script>

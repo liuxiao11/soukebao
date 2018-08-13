@@ -4,7 +4,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\Info as I;
 
-class Info extends Controller
+class Info extends Base
 {
     /*卖房信息*/
     public function index()
@@ -115,7 +115,7 @@ class Info extends Controller
         $category = new I;
         if (request()->isPost()) {
             $category->add();
-            $this->success('数据添加成功', 'User/agent');
+            $this->success('数据添加成功', 'Info/index');
         } else {
             $user_name = $category->user();
             $user = session('admin');
@@ -150,7 +150,7 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province() ,'category' => $category->category()]);
             return $this->fetch();
         }
     }
@@ -165,7 +165,8 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $list = $category->infoGeta();
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province(), 'list' => $list ,'category' => $category->category()]);
             return $this->fetch();
         }
     }
@@ -180,7 +181,7 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province() ,'category' => $category->category()]);
             return $this->fetch();
         }
     }
@@ -195,7 +196,8 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $list = $category->infoRenta();
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province(), 'list' => $list ,'category' => $category->category()]);
             return $this->fetch();
         }
     }
@@ -210,7 +212,7 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province() ,'category' => $category->category()]);
             return $this->fetch();
         }
     }
@@ -225,7 +227,8 @@ class Info extends Controller
         } else {
             $user_name = $category->user();
             $user = session('admin');
-            $this->assign(['admin_name' => $user, 'data' => $user_name]);
+            $list = $category->infoRecruita();
+            $this->assign(['admin_name' => $user, 'data' => $user_name, 'province' => $this->province(), 'list' => $list ,'category' => $category->category()]);
             return $this->fetch();
         }
     }

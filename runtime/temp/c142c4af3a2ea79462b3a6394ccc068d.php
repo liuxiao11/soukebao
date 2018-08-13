@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:87:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\info_recruit.html";i:1533027498;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:87:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\info_recruit.html";i:1533710299;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,7 +140,7 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>招聘信息</legend>
             </fieldset>
-            <!--<a href="<?php echo url('Info/addRecruit'); ?>" class="layui-btn btn-add btn-default" id="btn-add"  style="float: left">添加</a>-->
+            <a href="<?php echo url('Info/addRecruit'); ?>" class="layui-btn btn-add btn-default" id="btn-add"  style="float: left">添加</a>
             <form class="layui-form layui-form-pane" method="post" action="" style="float: right">
                 <span class="layui-form-label">搜索条件：</span>
                 <div class="layui-input-inline">
@@ -160,6 +160,7 @@
                 <tr>
                     <th>序号id</th>
                     <th>公司名称</th>
+                    <th>公司图片</th>
                     <th>薪资范围</th>
                     <th>工作职位</th>
                     <th>具体地址</th>
@@ -174,6 +175,7 @@
                 <tr>
                     <td><?php echo $vo['id']; ?></td>
                     <td><?php echo $vo['name']; ?></td>
+                    <td><img src="/uploads/<?php echo $vo['img']; ?>" style="width:25px;" onclick="previewImg(this);"></td>
                     <td><?php echo $vo['price']; ?>元</td>
                     <td><?php echo $vo['job']; ?></td>
                     <td><?php echo $vo['address']; ?></td>
@@ -185,6 +187,8 @@
                     <?php endif; ?>
                     <td><?php echo $vo['phone']; ?></td>
                     <td>
+                        <a href="<?php echo url('Info/editRecruit',['id'=>$vo['id']]); ?>" class="layui-btn layui-btn-mini layui-btn-normal"
+                           lay-event="edit">编辑</a>
                         <a href="<?php echo url('Info/delRecruit',['id'=>$vo['id']]); ?>" class="layui-btn layui-btn-mini"
                            lay-event="detail">删除</a>
                     </td>
@@ -241,3 +245,21 @@
 </script>
 </body>
 </html>
+<script type="application/javascript">
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //捕获页
+        layer.open({
+            type: 1,
+            shade: false,
+            title: false, //不显示标题
+            area: [900+'px', 500+'px'],
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+</script>

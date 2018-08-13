@@ -24,7 +24,7 @@ class Login extends Controller
     public function singOut()
     {
         $A = session('admin', NULL);
-        if ($A === NULL) {
+        if ($A == NULL) {
             $this->success('退出成功', 'Login/index');
         } else {
             msg('退出错误！');

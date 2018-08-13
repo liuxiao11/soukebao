@@ -64,7 +64,7 @@ class User extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findMorePg('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type', 'a.id', ['status' => 2], 'a.id desc', 10);
+        $data = findMorePg('sell_house', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img', 'a.id', ['status' => 2], 'a.id desc', 10);
         if ($data) {
             $data = isset($data) && !empty($data) ? $data : '';
             return $data;
@@ -129,7 +129,7 @@ class User extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findMorePg('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type', 'a.id', ['status' => 2], 'a.id desc', 10);
+        $data = findMorePg('rent', $join, 'a.id,a.name,a.phone,a.district,a.area,a.price,a.role,a.address,u.user_name,a.type,a.img', 'a.id', ['status' => 2], 'a.id desc', 10);
         if ($data) {
             $data = isset($data) && !empty($data) ? $data : '';
             return $data;
@@ -161,7 +161,7 @@ class User extends Model
         $join = [
             ['user u', 'u.id = a.user_id'],
         ];
-        $data = findMorePg('recruit', $join, 'a.id,a.name,a.phone,a.price,a.role,a.address,u.user_name,a.job,a.des', 'a.id', ['status' => 2], 'a.id desc', 10);
+        $data = findMorePg('recruit', $join, 'a.id,a.name,a.phone,a.price,a.role,a.address,u.user_name,a.job,a.des,a.img', 'a.id', ['status' => 2], 'a.id desc', 10);
         if ($data) {
             $data = isset($data) && !empty($data) ? $data : '';
             return $data;

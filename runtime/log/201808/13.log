@@ -1,0 +1,1949 @@
+---------------------------------------------------------------
+[ 2018-08-13T10:08:01+08:00 ] 127.0.0.1 GET /
+[ info ] www.soukebao.com/ [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：1,224.47kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:07+08:00 ] 127.0.0.1 POST /admin/login/index.html
+[ info ] www.soukebao.com/admin/login/index.html [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,150.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '29',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.soukebao.com',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'account' => 'zhangsan',
+  'password' => '123',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `id`,`admin_name` FROM `admin` `a` WHERE  `admin_name` = 'zhangsan'  AND `admin_pwd` = '202cb962ac59075b964b07152d234b70' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `admin`  SET `last_login_time`='2018-08-13 10:08:07'  WHERE  `id` = 1 [ RunTime:0.006000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:08+08:00 ] 127.0.0.1 GET /admin/User/index?admin_name=zhangsan
+[ info ] www.soukebao.com/admin/User/index?admin_name=zhangsan [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：2,295.68kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'admin_name' => 'zhangsan',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `user` `a` GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`wx_name`,`wx_avaurl`,`phone`,`last_login`,`role` FROM `user` `a` GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:08+08:00 ] 127.0.0.1 GET /admin/User/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/User/frame/static/js/vip_nav.js [运行时间：0.031002s][吞吐率：32.26req/s] [内存消耗：1,228.44kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:12+08:00 ] 127.0.0.1 GET /admin/User/demo/login.html
+[ info ] www.soukebao.com/admin/User/demo/login.html [运行时间：0.019001s][吞吐率：52.63req/s] [内存消耗：1,228.90kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'demo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:12+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：2,349.47kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.033002s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:13+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.016001s][吞吐率：62.50req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:13+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.019001s][吞吐率：52.63req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:14+08:00 ] 127.0.0.1 GET /admin/info/add.html
+[ info ] www.soukebao.com/admin/info/add.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：2,457.34kb] [文件加载：49]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->add[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\add.html [ array (
+  0 => 'admin_name',
+  1 => 'data',
+  2 => 'province',
+  3 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name` FROM `user` `a` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `province` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `code`,`name` FROM `province` `a` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:14+08:00 ] 127.0.0.1 GET /admin/frame/layui/layui.js
+[ info ] www.soukebao.com/admin/frame/layui/layui.js [运行时间：0.019001s][吞吐率：52.63req/s] [内存消耗：1,007.95kb] [文件加载：32]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'frame',
+    2 => 'layui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:14+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.029002s][吞吐率：34.48req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:24+08:00 ] 127.0.0.1 GET /admin/info/demo/login.html
+[ info ] www.soukebao.com/admin/info/demo/login.html [运行时间：0.019001s][吞吐率：52.63req/s] [内存消耗：1,243.74kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'demo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:24+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,349.42kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:24+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.016000s][吞吐率：62.50req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:24+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:52+08:00 ] 127.0.0.1 GET /admin/info/demo/login.html
+[ info ] www.soukebao.com/admin/info/demo/login.html [运行时间：0.024001s][吞吐率：41.66req/s] [内存消耗：1,243.74kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'demo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:52+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.075004s][吞吐率：13.33req/s] [内存消耗：2,349.42kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:52+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.021002s][吞吐率：47.61req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:52+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:52+08:00 ] 127.0.0.1 GET /admin/info/add.html
+[ info ] www.soukebao.com/admin/info/add.html [运行时间：0.070004s][吞吐率：14.28req/s] [内存消耗：2,311.37kb] [文件加载：47]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->add[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\add.html [ array (
+  0 => 'admin_name',
+  1 => 'data',
+  2 => 'province',
+  3 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name` FROM `user` `a` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `province` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `code`,`name` FROM `province` `a` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:08:53+08:00 ] 127.0.0.1 GET /admin/frame/layui/layui.js
+[ info ] www.soukebao.com/admin/frame/layui/layui.js [运行时间：0.017001s][吞吐率：58.82req/s] [内存消耗：1,007.95kb] [文件加载：32]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'frame',
+    2 => 'layui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:08:53+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.023001s][吞吐率：43.48req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/add.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:18:06+08:00 ] 127.0.0.1 GET /
+[ info ] www.soukebao.com/ [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,225.35kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:18:13+08:00 ] 127.0.0.1 POST /admin/login/index.html
+[ info ] www.soukebao.com/admin/login/index.html [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：2,150.49kb] [文件加载：48]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '29',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.soukebao.com',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'account' => 'zhangsan',
+  'password' => '123',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`admin_name` FROM `admin` `a` WHERE  `admin_name` = 'zhangsan'  AND `admin_pwd` = '202cb962ac59075b964b07152d234b70' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `admin`  SET `last_login_time`='2018-08-13 10:18:13'  WHERE  `id` = 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:18:13+08:00 ] 127.0.0.1 GET /admin/User/index?admin_name=zhangsan
+[ info ] www.soukebao.com/admin/User/index?admin_name=zhangsan [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：2,295.68kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'admin_name' => 'zhangsan',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\user\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `user` `a` GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`wx_name`,`wx_avaurl`,`phone`,`last_login`,`role` FROM `user` `a` GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:18:13+08:00 ] 127.0.0.1 GET /admin/User/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/User/frame/static/js/vip_nav.js [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,228.44kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:18:17+08:00 ] 127.0.0.1 GET /admin/User/demo/login.html
+[ info ] www.soukebao.com/admin/User/demo/login.html [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,228.90kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'demo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:18:17+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.066003s][吞吐率：15.15req/s] [内存消耗：2,484.17kb] [文件加载：53]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:18:17+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.015001s][吞吐率：66.66req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:18:17+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020002s][吞吐率：49.99req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:19:34+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.065004s][吞吐率：15.38req/s] [内存消耗：2,484.52kb] [文件加载：53]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:19:34+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.015001s][吞吐率：66.66req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:19:34+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:20:16+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：2,480.45kb] [文件加载：53]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:20:16+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.017001s][吞吐率：58.82req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:20:16+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020002s][吞吐率：50.00req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:20:50+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,480.45kb] [文件加载：53]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.002001s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:20:50+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.015001s][吞吐率：66.66req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:20:50+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:21:28+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：2,480.42kb] [文件加载：53]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:21:28+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.015001s][吞吐率：66.66req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:21:28+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.021001s][吞吐率：47.62req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:23:11+08:00 ] 127.0.0.1 GET /admin/info/index.html
+[ info ] www.soukebao.com/admin/info/index.html [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,349.80kb] [文件加载：51]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/User/index?admin_name=zhangsan',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Info->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Info.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\index.html [ array (
+  0 => 'admin_name',
+  1 => 'list',
+  2 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sell_house` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ) `_group_count_` LIMIT 1 [ RunTime:0.005001s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  `status` = 1 GROUP BY `a`.`id` ORDER BY `a`.`id` DESC LIMIT 0,10 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `category` `a` [ RunTime:0.005001s ]
+---------------------------------------------------------------
+[ 2018-08-13T10:23:11+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.016001s][吞吐率：62.50req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:23:11+08:00 ] 127.0.0.1 GET /admin/info/frame/static/js/vip_nav.js
+[ info ] www.soukebao.com/admin/info/frame/static/js/vip_nav.js [运行时间：0.020001s][吞吐率：50.00req/s] [内存消耗：1,243.16kb] [文件加载：39]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'info',
+    2 => 'frame',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'static' => 'js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:23:13+08:00 ] 127.0.0.1 GET /uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg
+[ info ] www.soukebao.com/uploads/20180811/97b9729f65d86fc27675dc8a92c96bed.jpg [运行时间：0.016001s][吞吐率：62.50req/s] [内存消耗：1,006.22kb] [文件加载：31]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20180811',
+    2 => '97b9729f65d86fc27675dc8a92c96bed.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://www.soukebao.com/admin/info/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T10:31:40+08:00 ] 127.0.0.1 GET /
+[ info ] www.soukebao.com/ [运行时间：0.021002s][吞吐率：47.61req/s] [内存消耗：1,225.35kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\php\PHPTutorial\WWW\soukebao\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T12:45:47+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.019001s][吞吐率：52.63req/s] [内存消耗：1,022.30kb] [文件加载：32]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]方法参数错误:id[D:\php\PHPTutorial\WWW\soukebao\thinkphp\library\think\App.php:431]
+---------------------------------------------------------------
+[ 2018-08-13T12:46:57+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.300017s][吞吐率：3.33req/s] [内存消耗：1,028.30kb] [文件加载：33]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\Login->get_qrcode[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Call to undefined method app\api\controller\Login::send_post()[D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php:97]
+---------------------------------------------------------------
+[ 2018-08-13T12:47:26+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.426024s][吞吐率：2.35req/s] [内存消耗：992.95kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\Login->get_qrcode[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T12:47:59+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.461026s][吞吐率：2.17req/s] [内存消耗：993.85kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\Login->get_qrcode[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T12:59:06+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.465026s][吞吐率：2.15req/s] [内存消耗：992.95kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\Login->get_qrcode[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-13T13:06:36+08:00 ] 127.0.0.1 GET /get_qrcode
+[ info ] www.soukebao.com/get_qrcode [运行时间：0.847049s][吞吐率：1.18req/s] [内存消耗：1,052.98kb] [文件加载：30]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Login',
+    2 => 'get_qrcode',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=04bfm7odsn3i7mard39c744qgo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\api\controller\Login->get_qrcode[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\Login.php ]
+[ info ] [ LOG ] INIT File

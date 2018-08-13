@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\add.html";i:1533090220;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533027498;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:78:"D:\php\PHPTutorial\WWW\soukebao\public/../application/admin\view\info\add.html";i:1534126078;s:73:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header.html";i:1533886426;s:76:"D:\php\PHPTutorial\WWW\soukebao\application\admin\view\public\header_js.html";i:1533027498;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>后台模板 HTML</title>
+    <title>搜客宝后台</title>
     <link rel="stylesheet" href="/frame/layui/css/layui.css">
     <link rel="stylesheet" href="/frame/static/css/style.css">
     <link rel="icon" href="/frame/static/image/code.png">
@@ -123,6 +123,7 @@
                         <dd><a href="<?php echo url('System/category'); ?>"><i class="layui-icon">&#xe621;</i>分类列表</a></dd>
                         <dd><a href="<?php echo url('System/index'); ?>"><i class="layui-icon">&#xe621;</i>设置经纪人付款金额</a></dd>
                         <dd><a href="<?php echo url('System/editAdmin'); ?>"><i class="layui-icon">&#xe621;</i>管理员信息</a></dd>
+                        <dd><a href="<?php echo url('System/page'); ?>"><i class="layui-icon">&#xe621;</i>页面图片设置</a></dd>
                     </dl>
                 </li>
 
@@ -140,7 +141,7 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                 <legend>卖房信息发布</legend>
             </fieldset>
-            <form class="layui-form layui-form-pane" action="" id="formdata" method="post" style="margin-left: 20px">
+            <form class="layui-form layui-form-pane" action="" id="formdata" method="post" style="margin-left: 20px" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">楼盘名称</label>
 
@@ -181,27 +182,35 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">价格范围</label>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid">-</div>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
-                        </div>
+                    <label class="layui-form-label">价格选择</label>
+                    <div class="layui-input-inline">
+                        <select name="price" lay-verify="required" lay-search="">
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="<5000">5000以下</option>
+                            <option value="5000-8000">5000-8000</option>
+                            <option value="8000-12000">8000-12000</option>
+                            <option value="12000-15000">12000-15000</option>
+                            <option value="15000-20000">15000-20000</option>
+                            <option value="20000-25000">20000-25000</option>
+                            <option value="25000-30000">25000-30000</option>
+                            <option value="30000-35000">30000-35000</option>
+                            <option value="35000-40000">35000-40000</option>
+                            <option value=">40000">40000以上</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">面积范围</label>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="area_min" placeholder="㎡" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid">-</div>
-                        <div class="layui-input-inline" style="width: 100px;">
-                            <input type="text" name="area_max" placeholder="㎡" autocomplete="off" class="layui-input">
-                        </div>
+                    <label class="layui-form-label">面积选择</label>
+                    <div class="layui-input-inline">
+                        <select name="area" lay-verify="required" lay-search="">
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="<50">50以下</option>
+                            <option value="50-100">50-100</option>
+                            <option value="100-150">100-150</option>
+                            <option value="250-300">250-300</option>
+                            <option value="300-350">300-350</option>
+                            <option value=">350">350以上</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-pane">
@@ -246,6 +255,15 @@
                             <option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">上传图片</label>
+
+                    <div class="layui-input-block">
+                        <input type="file" name="img[]" /> <br>
+                        <input type="file" name="img[]" /> <br>
+                        <input type="file" name="img[]" /> <br>
                     </div>
                 </div>
                 <hr>

@@ -32,4 +32,15 @@ class Search extends Rest
             echo json(200, '');
         }
     }
+    /*求购信息*/
+    public function getMsg()
+    {
+        $user = new S;
+        $find = $user->getMsg();
+        if ($find) {
+            echo json(200, $find);
+        } else {
+            echo json(200, '');
+        }
+    }
 }

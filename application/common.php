@@ -298,6 +298,25 @@ function upFile($fileName)
         return "";
     }
 }
+//多文件
+function upFiles($fileName){
+    // 获取表单上传文件
+    $files = request()->file($fileName);
+    if($files){
+        $data = [];
+        foreach($files as $file){
+            $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+            if($info){
+                $data[] = $info->getSaveName();
+            }else{
+                $data[] = $file->getError();
+            }
+        }
+        return $data;
+    }else{
+        return "";
+    }
+}
 
 
 /*获取微信token*/
@@ -392,6 +411,6 @@ function openId($code)
     $json = json_decode($info);
     $arr = get_object_vars($json);
     $openid = $arr['openid'];
-//    $openid = "oHpuZ5Ths0LY6GDWEVBybZ6RfnxI";
+//    $openid = "oleDx5HLXEGgBuOaQDe8K8YxoOic";
     return $openid;
 }

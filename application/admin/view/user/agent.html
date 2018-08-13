@@ -35,6 +35,7 @@
                     <th>用户角色</th>
                     <th>联系方式</th>
                     <th>房子类型</th>
+                    <th>房子图片</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -59,6 +60,14 @@
                     <td>{$v.name}</td>
                     {/if}
                     {/volist}
+                    <td>
+                        {php}
+                        $img = json_decode($vo['img'],true);
+                        {/php}
+                        {volist name="$img" id="v" }
+                        <img src="/uploads/{$v}" style="width: 25px ;" onclick="previewImg(this);">
+                        {/volist}
+                    </td>
                     <td>
                         <a href="{:url('User/agentPass',['id'=>$vo.id])}" class="layui-btn layui-btn-mini"
                            lay-event="detail">审核通过</a>
@@ -99,3 +108,21 @@
 {include file="public/header_js" /}
 </body>
 </html>
+<script type="application/javascript">
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //捕获页
+        layer.open({
+            type: 1,
+            shade: false,
+            title: false, //不显示标题
+            area: [900+'px', 500+'px'],
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+</script>
