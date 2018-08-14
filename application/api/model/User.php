@@ -31,6 +31,16 @@ class User extends Model
     {
         $data = Request::instance()->param();
         $data['id'] = $data['user_id'];
+        $find = findone('user',[],'user_name,phone,role',['id'=>$data['id']]);
+        if($data['user_name'] == "" || $data['user_name'] == $find['user_name']){
+           unset($data['user_name'])  ;
+        }
+        if($data['phone'] == "" || $data['phone'] == $find['phone']){
+            unset($data['phone']) ;
+        }
+        if($data['role'] == "" || $data['role'] == $find['role']){
+            unset($data['role']) ;
+        }
         unset($data['user_id']);
         $edit = edit('user', ['id' => $data['id']], $data);
         if ($edit) {

@@ -1,0 +1,625 @@
+---------------------------------------------------------------
+[ 2018-08-14T08:50:40+08:00 ] 127.0.0.1 GET /mymsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D
+[ info ] www.soukebao.com/mymsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：1,022.45kb] [文件加载：32]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'myMsg Del',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{ "type": "3", "msg_id": 12}',
+)
+[ info ] [ RUN ] think\controller\Rest->_empty[ D:\php\PHPTutorial\WWW\soukebao\thinkphp\library\think\controller\Rest.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]error action :myMsg Del[D:\php\PHPTutorial\WWW\soukebao\thinkphp\library\think\controller\Rest.php:82]
+---------------------------------------------------------------
+[ 2018-08-14T08:51:18+08:00 ] 127.0.0.1 GET /myMsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D
+[ info ] www.soukebao.com/myMsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D [运行时间：0.016001s][吞吐率：62.50req/s] [内存消耗：1,022.46kb] [文件加载：32]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'myMsg Del',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{ "type": "3", "msg_id": 12}',
+)
+[ info ] [ RUN ] think\controller\Rest->_empty[ D:\php\PHPTutorial\WWW\soukebao\thinkphp\library\think\controller\Rest.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]error action :myMsg Del[D:\php\PHPTutorial\WWW\soukebao\thinkphp\library\think\controller\Rest.php:82]
+---------------------------------------------------------------
+[ 2018-08-14T08:52:33+08:00 ] 127.0.0.1 GET /myMsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D
+[ info ] www.soukebao.com/myMsgdel/%7B%20%22type%22:%20%223%22,%20%22msg_id%22:%2012%7D [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：1,913.22kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'myMsgDel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '{ "type": "3", "msg_id": 12}',
+)
+[ info ] [ RUN ] app\api\controller\User->myMsgDel[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rent` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] DELETE FROM `rent`    WHERE  `id` = 12 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:48:10+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：1,914.91kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary1Ie46acqn2STAr9y',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '张三',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`user_name`='张三',`phone`='158764452584',`id`=3  WHERE  `id` = 3 [ RunTime:0.013001s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:48:32+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.041002s][吞吐率：24.39req/s] [内存消耗：1,914.24kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryaBWozCjVCSEC6ccT',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`phone`='158764452584',`id`=3  WHERE  `id` = 3 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:48:55+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.024002s][吞吐率：41.66req/s] [内存消耗：1,751.20kb] [文件加载：36]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary5sZKCqmA3POVMhYV',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-14T10:55:03+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.038002s][吞吐率：26.31req/s] [内存消耗：1,837.20kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryBVrdd9BK7xYZsfbp',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:55:15+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.038003s][吞吐率：26.31req/s] [内存消耗：1,916.24kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary9vW3ZEeAg2aVqLoS',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`user_name`='张三',`phone`='158764452584',`id`=3  WHERE  `id` = 3 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:58:01+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：1,915.28kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryHpiAtSUo9yRPkugO',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`id`=3  WHERE  `id` = 3 [ RunTime:0.013001s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:58:02+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.041003s][吞吐率：24.39req/s] [内存消耗：1,915.28kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarywB5SWZ5q9zXxPUFu',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`id`=3  WHERE  `id` = 3 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:58:12+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,915.31kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarygE1zqBZ3IbiJTyeo',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '张三',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=1,`id`=3  WHERE  `id` = 3 [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:58:29+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：1,837.26kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryNVVLEeZ3iSnVNZGX',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '张三',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.022001s ]
+---------------------------------------------------------------
+[ 2018-08-14T10:59:10+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.107006s][吞吐率：9.35req/s] [内存消耗：1,837.65kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary0hT5extyJOw3b62G',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '张三',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.050003s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.009001s ]
+---------------------------------------------------------------
+[ 2018-08-14T11:00:10+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.075005s][吞吐率：13.33req/s] [内存消耗：1,837.65kb] [文件加载：37]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryX9B4KAZODpINTboE',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '李四',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.038002s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-08-14T11:00:26+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：1,915.80kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryqsn9IzK5JsDyy3fK',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '李四',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `user_name`='李四',`id`=3  WHERE  `id` = 3 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T11:00:37+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.042002s][吞吐率：23.81req/s] [内存消耗：1,915.80kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '437',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryz5pyM1P83Oh5pAPY',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '1',
+  'user_name' => '张三',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `user_name`='张三',`id`=3  WHERE  `id` = 3 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-08-14T11:04:35+08:00 ] 127.0.0.1 POST /infoedit
+[ info ] www.soukebao.com/infoedit [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：1,915.70kb] [文件加载：42]
+[ info ] [ LANG ] D:\php\PHPTutorial\WWW\soukebao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'User',
+    2 => 'infoEdit',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '431',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryR6dDCm52D9ng2U1g',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'origin' => 'chrome-extension://geobniafmelcledgickglbajofpkllpl',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'www.soukebao.com',
+)
+[ info ] [ PARAM ] array (
+  'role' => '2',
+  'user_name' => '',
+  'phone' => '158764452584',
+  'user_id' => '3',
+)
+[ info ] [ RUN ] app\api\controller\User->infoEdit[ D:\php\PHPTutorial\WWW\soukebao\application\api\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017001s ] mysql:host=127.0.0.1;dbname=soukebao;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT `user_name`,`phone`,`role` FROM `user` `a` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `role`=2,`id`=3  WHERE  `id` = 3 [ RunTime:0.007001s ]

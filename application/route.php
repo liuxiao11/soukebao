@@ -17,7 +17,7 @@ Route::get('/get_qrcode', 'api/Login/get_qrcode'); //获取二维码
 Route::get('/infoperson/:id', 'api/User/infoPerson'); //个人信息
 Route::post('/infoedit', 'api/User/infoEdit');//修改个人信息
 Route::get('/mymsg/:id', 'api/User/myMsg');//我发布的信息
-Route::get('/mymsgdel/:id', 'api/User/myMsg Del');//我发布删除
+Route::get('/mymsgdel/:id', 'api/User/myMsgDel');//我发布删除
 Route::get('/housetype', 'api/User/houseType');//我发布的信息
 Route::post('/upFile', 'api/User/upFile');//上传
 Route::get('/kfphone', 'api/User/kfPhone');//客服电话

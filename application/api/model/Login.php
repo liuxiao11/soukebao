@@ -21,7 +21,7 @@ class Login extends Model
         $sell = Db::query("SELECT `a`.`id`,`a`.`name`,`a`.`phone`,`a`.`district`,`a`.`area`,`a`.`price`,`a`.`role`,`a`.`address`,`u`.`user_name`,`a`.`type`,`a`.`img`,`a`.`create_time`,`a`.`des` FROM `sell_house` `a` INNER JOIN `user` `u` ON `u`.`id`=`a`.`user_id` WHERE  $where  `status` = 1  AND `a`.`city` = '$city' ORDER BY `a`.`id` DESC");
         /*买房信息*/
         if ($data['search']) {
-            $where1 = " ( `a`.`area` LIKE '%".$data['search']."%'  OR `a`.`phone` LIKE '%".$data['search']."%'  OR `a`.`price` LIKE '%".$data['search']."%'  OR `a`.`district` LIKE '%".$data['search']."%'  OR `a`.`address` LIKE '%".$data['search']."%') AND " ;
+            $where1 = " ( `a`.`name` LIKE '%".$data['search']."%'  OR `a`.`area` LIKE '%".$data['search']."%'  OR `a`.`phone` LIKE '%".$data['search']."%'  OR `a`.`price` LIKE '%".$data['search']."%'  OR `a`.`district` LIKE '%".$data['search']."%'  OR `a`.`address` LIKE '%".$data['search']."%') AND " ;
         } else {
             $where1 = '';
         }
